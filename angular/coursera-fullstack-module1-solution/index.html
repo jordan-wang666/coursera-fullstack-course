@@ -22,15 +22,14 @@
     <div ng-controller="LunchCheckController">
       <div class="form-group">
         <input id="lunch-menu" ng-model="dishes" type="text"
-          placeholder="list comma separated dishes you usually have for lunch" class="form-control"
-          ng-style="boxStyle">
+          placeholder="list comma separated dishes you usually have for lunch" class="form-control" ng-style="boxStyle">
       </div>
       <div class="form-group">
         <button ng-click="check()" class="btn btn-default">Check If Too Much</button>
       </div>
-      <div ng-class="form-group message" ng-style="messageStyle">
+      <div class="form-group message" ng-style="messageStyle">
         <!-- Your message can go here. -->
-        {{message}}
+        {{myMessage}}
       </div>
     </div>
   </div>

@@ -6,14 +6,14 @@
 
     LunchCheckController.$inject = ['$scope'];
     function LunchCheckController($scope) {
-        $scope.message = '';
+        $scope.myMessage = '';
         $scope.dishes = '';
         $scope.messageStyle = {};
         $scope.boxStyle = {};
 
         $scope.check = function () {
             if ($scope.dishes.trim().length === 0) {
-                $scope.message = 'Please enter data first';
+                $scope.myMessage = 'Please enter data first';
                 $scope.messageStyle = {
                     color: "red"
                 };
@@ -29,11 +29,11 @@
                 };
                 var arr = $scope.dishes.split(',').filter(dish => dish.trim() != '');
                 if (arr.length === 0) {
-                    $scope.message = 'Please enter data first';
+                    $scope.myMessage = 'Please enter data first';
                 } else if (arr.length < 4) {
-                    $scope.message = 'Enjoy';
+                    $scope.myMessage = 'Enjoy';
                 } else {
-                    $scope.message = 'Too Much';
+                    $scope.myMessage = 'Too Much';
                 }
             }
         }
