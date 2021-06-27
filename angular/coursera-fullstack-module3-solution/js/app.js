@@ -31,8 +31,7 @@
       }
     };
 
-    controller.dontWant = function (index) {
-      console.log("Index: ", index);
+    controller.remove = function (index) {
       controller.found.splice(index, 1);
     };
   }
@@ -73,7 +72,7 @@
         list: "<",
         title: "@title",
         result: "@result",
-        dontWant: "&"
+        remove: "&"
       },
     };
     return ddo;
