@@ -9,31 +9,31 @@
 
   NarrowItDownController.$inject = ["MenuSearchService"];
   function NarrowItDownController(MenuSearchService) {
-    var ctrl = this;
-    ctrl.searchFor = "";
-    ctrl.searchResult = "";
-    ctrl.found = [];
+    var controller = this;
+    controller.searchFor = "";
+    controller.searchResult = "";
+    controller.found = [];
 
-    ctrl.search = function () {
-      if (ctrl.searchFor && ctrl.searchFor.length > 0) {
-        ctrl.searchResult = "";
-        var promise = MenuSearchService.getMatchedMenuItems(ctrl.searchFor);
+    controller.search = function () {
+      if (controller.searchFor && controller.searchFor.length > 0) {
+        controller.searchResult = "";
+        var promise = MenuSearchService.getMatchedMenuItems(controller.searchFor);
 
         promise.then(function (result) {
-          ctrl.found = result;
-          if (ctrl.found.length === 0) {
-            ctrl.searchResult = "Nothing found (matching \"" + ctrl.searchFor + "\")";
+          controller.found = result;
+          if (controller.found.length === 0) {
+            controller.searchResult = "Nothing found (matching \"" + controller.searchFor + "\")";
           }
         });
       }
       else {
-        ctrl.searchResult = "Nothing found";
+        controller.searchResult = "Nothing found";
       }
     };
 
-    ctrl.dontWant = function (index) {
+    controller.dontWant = function (index) {
       console.log("Index: ", index);
-      ctrl.found.splice(index, 1);
+      controller.found.splice(index, 1);
     };
   }
 
