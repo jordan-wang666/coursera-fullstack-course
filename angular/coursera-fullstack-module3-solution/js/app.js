@@ -22,7 +22,7 @@
         promise.then(function (result) {
           controller.found = result;
           if (controller.found.length === 0) {
-            controller.searchResult = "Nothing found (matching \"" + controller.searchFor + "\")";
+            controller.searchResult = "Nothing found by " + controller.searchFor;
           }
         });
       }
