@@ -5,45 +5,45 @@
     <form name='signUpForm' novalidate>
       <div class="form-group">
         <label for="firstName">First Name</label>
-        <input type="text" class="form-control" name="firstName" placeholder="Enter First Name"
-          ng-model="$signUpCtrl.user.firstName" required minlength="2" ng-maxlength="10">
+        <input type="text" class="form-control" name="firstName" placeholder="Enter Your First Name"
+          ng-model="$signUpCtrl.user.firstName" required minlength="3" ng-maxlength="10">
         <span
           ng-if="(signUpForm.firstName.$error.minlength || signUpForm.firstName.$error.required) && signUpForm.firstName.$touched">
-          First Name must be at least 2 characters long
+          First Name must more than 3 characters
         </span>
         <span ng-if="signUpForm.firstName.$error.maxlength && signUpForm.firstName.$touched">
-          First Name must not be longer than 10 characters
+          First Name must less than 10 characters
         </span>
         <br>
       </div>
 
       <div class="form-group">
         <label for="lastName">Last Name</label>
-        <input type="text" class="form-control" name="lastName" placeholder="Enter Last Name"
-          ng-model="$signUpCtrl.user.lastName" required minlength="1" ng-maxlength="10">
+        <input type="text" class="form-control" name="lastName" placeholder="Enter Your Last Name"
+          ng-model="$signUpCtrl.user.lastName" required minlength="3" ng-maxlength="10">
         <span
           ng-if="(signUpForm.lastName.$error.minlength || signUpForm.lastName.$error.required) && signUpForm.lastName.$touched">
-          Last Name must be at least 1 characters long
+          Last Name must more than 3 characters
         </span>
         <span ng-if="signUpForm.lastName.$error.maxlength && signUpForm.lastName.$touched">
-          Last Name must not be longer than 10 characters
+          Last Name must less than 10 characters
         </span>
         <br>
       </div>
 
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" class="form-control" name="email" placeholder="Email" ng-model="$signUpCtrl.user.email"
+        <input type="email" class="form-control" name="email" placeholder="Enter Your Email" ng-model="$signUpCtrl.user.email"
           required>
         <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
-          Must be a valid email address: handle@domain format
+          Must be a valid email address: xxxxx@xxxxx.com format
         </span>
         <br>
       </div>
 
       <div class="form-group">
         <label for="phone">Phone</label>
-        <input type="text" class="form-control" name="phone" placeholder="Phone ###-###-####"
+        <input type="text" class="form-control" name="phone" placeholder="Enter Your Phone Number ###-###-####"
           ng-model="$signUpCtrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
         <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
           Phone must be in the format ###-###-####.
